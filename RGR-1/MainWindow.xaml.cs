@@ -36,15 +36,15 @@ namespace RGR_1
             double y;
             while (x <= x2)
             {
-                if (x <= 0)
+                if (x < 0)
                 {
-                    y = (A / 2) * (Math.Pow(Math.E, (x / A)) + Math.Pow(Math.E, (-x / A)));
+                    y = Math.Sqrt(Math.Sqrt(16 * Math.Pow(A,4) + 4 * A * A * x * x) - x * x - A * A);
                     Answer.Text += $"y({x}) = " + y.ToString() + Environment.NewLine;
 
                 }
-                else if (x > 0)
+                else if (x >= 0)
                 {
-                    y = 4 * Math.Pow(A, 3) / (x * x + 4 * A * A);
+                    y = A * Math.Sqrt(3) + Math.Sqrt(A * A - Math.Pow(Math.E, -x) * Math.Sin(A * x));
                     Answer.Text += $"y({x}) = " + y.ToString() + Environment.NewLine;
                 }
                 x += M;
